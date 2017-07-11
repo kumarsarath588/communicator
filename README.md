@@ -7,14 +7,13 @@ Example:
 
 import (
 	"fmt"
-	"os"
-
 	"github.com/kumarsarath588/communicator"
+	"os"
 )
 
 func main() {
 	host := &communicator.Host{
-		Address:  "10.7.111.162",
+		Address:  "10.7.84.229",
 		Port:     5985,
 		Username: "administrator",
 		Password: "nutanix/4u",
@@ -22,8 +21,8 @@ func main() {
 	}
 	c := communicator.New(host)
 	if c == nil {
-		fmt.Println("Unknown kind of communication").
-		os.Exit(0)/
+		fmt.Println("Unknown kind of communication")
+		os.Exit(0)
 	}
 	err := c.Connect()
 	fmt.Println("Connecting to host:", host.Address)
@@ -37,4 +36,4 @@ func main() {
 		fmt.Println("Error Executing Command:", err)
 		panic(err)
 	}
-}```
+}
